@@ -1,4 +1,4 @@
-import { Item } from 'reducers/search';
+import { Item } from 'store/search';
 
 type SearchFunction = (targetArray: Item[], value: string) => Item[];
 

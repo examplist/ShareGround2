@@ -1,18 +1,17 @@
-import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
+import { useSearchStore } from 'store/search';
 import { useState, useRef, ChangeEvent } from 'react';
 import { useRouter } from 'next/router';
-import { useDispatch } from 'react-redux';
-import searchReducer from 'reducers/search';
+import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import * as s from 'styles/components/Write';
 
 export default function Create({ userid }: { userid: string }) {
+  const { add: addToSearch } = useSearchStore();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
   const refSubmit = useRef<HTMLInputElement>(null);
   const refFile = useRef<HTMLInputElement>(null);
   const [fileName, setFileName] = useState<string>('');
-  const dispatch = useDispatch();
 
   const click$cancel = () => {
     router.push('/');
@@ -84,7 +83,7 @@ export default function Create({ userid }: { userid: string }) {
       return;
     }
     const { id, newSearchList } = await response.json();
-    dispatch(searchReducer.actions.add({ list: newSearchList }));
+    addToSearch(newSearchList);
     router.push(`/article/${id}`);
   };
 

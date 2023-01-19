@@ -1,5 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
-import authReducer, { AuthState } from 'reducers/auth';
+import { useAuthStore } from 'store/auth';
 import { ChangeEvent, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
@@ -7,9 +6,8 @@ import { LoadStatus } from 'components/profile/Account';
 import * as s from 'styles/components/AccountPhoto';
 
 export default function ProfilePhoto({ loadStatus }: { loadStatus: LoadStatus }) {
-  const dispatch = useDispatch();
   const { loading, setLoading } = loadStatus;
-  const { id: userid, photo } = useSelector((state: AuthState) => state.auth);
+  const { id: userid, photo, changePhoto } = useAuthStore();
   const userphoto = photo ? photo : '';
   const refInputPhoto = useRef<HTMLInputElement>(null);
 
@@ -32,7 +30,7 @@ export default function ProfilePhoto({ loadStatus }: { loadStatus: LoadStatus })
       alert('죄송합니다. 수정이 되지 않았습니다.');
     } else {
       const { url } = await response.json();
-      dispatch(authReducer.actions.changePhoto({ photo: url }));
+      changePhoto(url);
     }
     setLoading(false);
   };

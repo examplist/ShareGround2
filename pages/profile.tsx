@@ -1,10 +1,9 @@
-import { useSelector } from 'react-redux';
+import { useAuthStore, authStatus } from 'store/auth';
+import { useState } from 'react';
 import Account from 'components/profile/Account';
 import Wrote from 'components/profile/Wrote';
 import InterestList from 'components/profile/InterestList';
 import * as s from 'styles/pages/profile';
-import { AuthState, authStatus } from 'reducers/auth';
-import { useState } from 'react';
 
 function Exist() {
   const [category, setCategory] = useState<string>('account');
@@ -50,7 +49,7 @@ function Exist() {
 }
 
 export default function profile() {
-  const currentAuthStatus = useSelector((state: AuthState) => state.auth.status);
+  const { status: currentAuthStatus } = useAuthStore();
 
   if (currentAuthStatus === authStatus.loading) {
     return <s.Loading>로딩 중</s.Loading>;

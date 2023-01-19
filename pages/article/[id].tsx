@@ -1,15 +1,14 @@
-import { Context } from 'utils/typeContext';
+import { useAuthStore } from 'store/auth';
 import getSsrApi from 'utils/getSsrApi';
-import { useSelector } from 'react-redux';
-import { AuthState } from 'reducers/auth';
 import dateNumToStr from 'utils/dateNumToStr';
 import { categoryEngToKor } from 'utils/convertCategoryLanguage';
-import * as s from 'styles/pages/article';
 import ToEdit from 'components/article/ToEdit';
 import Delete from 'components/article/Delete';
 import InterestButton from 'components/article/InterestButton';
 import CommentForm from 'components/article/CommentForm';
 import Comments from 'components/article/Comments';
+import * as s from 'styles/pages/article';
+import { Context } from 'utils/typeContext';
 
 export interface CommentType {
   id: string;
@@ -39,6 +38,8 @@ interface Props {
 }
 
 export default function ({ status, message, article }: Props) {
+  const { id: currentUserid } = useAuthStore();
+
   if (status === 'error') {
     return <s.Error>{message}</s.Error>;
   }
@@ -46,8 +47,6 @@ export default function ({ status, message, article }: Props) {
   if (article === null) {
     return <></>;
   }
-
-  const { id: currentUserid } = useSelector((state: AuthState) => state.auth);
 
   return (
     <s.Content>

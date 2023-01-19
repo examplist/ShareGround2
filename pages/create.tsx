@@ -1,10 +1,9 @@
-import { useSelector } from 'react-redux';
-import { AuthState, authStatus } from 'reducers/auth';
+import { useAuthStore, authStatus } from 'store/auth';
 import Create from 'components/create/Create';
 import * as s from 'styles/pages/write';
 
 export default function profile() {
-  const { id, status: currentAuthStatus } = useSelector((state: AuthState) => state.auth);
+  const { id, status: currentAuthStatus } = useAuthStore();
   const userid = id ?? '';
 
   if (currentAuthStatus === authStatus.loading) {

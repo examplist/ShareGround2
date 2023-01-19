@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-19T04:44:27.243Z",
+    "end": "2023-01-19T04:44:43.045Z",
+    "duration": 15802,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dc7173f9-79d4-47dd-9764-0ecbf92187eb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\interest.ts",
+      "file": "cypress\\e2e\\interest.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "703fbb67-741b-4e25-b561-b76facc0795d",
+          "title": "관심 목록",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "추가하고 삭제하기",
+              "fullTitle": "관심 목록 추가하고 삭제하기",
+              "timedOut": null,
+              "duration": 15672,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 로그인하기\nObject(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"login\"])('qwer@gmail.com', 'asdf1234');\ncy.visit('/article/9mDSqenHRWNZTvCvsSew');\n// 추가하기\ncy.get('#article__interest-button').click();\ncy.get('#article__interest-button svg').should('have.attr', 'data-prefix', 'fas');\n// 프로필에서 확인하기\ncy.visit('/profile');\ncy.get('#profile-button__interest').click();\ncy.contains(titleText).click();\n// 해제하기\ncy.get('#article__interest-button svg').should('have.attr', 'data-prefix', 'fas');\ncy.get('#article__interest-button').click();\ncy.get('#article__interest-button svg').should('have.attr', 'data-prefix', 'far');\n// 프로필에서 확인하기\ncy.visit('/profile');\ncy.get('#profile-button__interest').click();\ncy.contains(titleText).should('not.exist');\n// 로그아웃하기\nObject(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"logout\"])();",
+              "err": {},
+              "uuid": "e7b70c41-a355-4b7c-a927-e7a4516fc2a6",
+              "parentUUID": "703fbb67-741b-4e25-b561-b76facc0795d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e7b70c41-a355-4b7c-a927-e7a4516fc2a6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15672,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name].json",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results",
+        "reportFilename": "[name].json",
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

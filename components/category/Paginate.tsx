@@ -1,5 +1,5 @@
-import ReactPaginate from 'react-paginate';
 import { useRouter } from 'next/router';
+import ReactPaginate from 'react-paginate';
 import * as s from 'styles/components/Paginate';
 
 interface Props {

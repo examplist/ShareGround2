@@ -1,13 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import authReducer, { AuthState } from 'reducers/auth';
+import { useAuthStore } from 'store/auth';
 import { useRef } from 'react';
 import { LoadStatus } from 'components/profile/Account';
 import * as s from 'styles/components/AccountName';
 
 export default function AccountName({ loadStatus }: { loadStatus: LoadStatus }) {
   const { loading, setLoading } = loadStatus;
-  const dispatch = useDispatch();
-  const { name, id: userid } = useSelector((state: AuthState) => state.auth);
+  const { name, id: userid, changeName } = useAuthStore();
   const username = name ? name : '';
   const refNameSection = useRef<HTMLElement>(null);
   const refInputName = useRef<HTMLInputElement>(null);
@@ -47,7 +45,7 @@ export default function AccountName({ loadStatus }: { loadStatus: LoadStatus }) 
     if (response.status !== 204) {
       alert('수정이 되지 않았습니다.');
     } else {
-      dispatch(authReducer.actions.changeName({ name: $inputName.value }));
+      changeName($inputName.value);
       refNameSection.current?.classList.remove('edit-mode');
     }
     setLoading(false);

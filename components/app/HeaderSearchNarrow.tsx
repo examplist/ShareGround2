@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import * as s from 'styles/components/HeaderSearchNarrow';
-import { ChangeSearch, Result, ClickResult } from 'components/app/HeaderSearh';
 import { useRef, forwardRef, useEffect } from 'react';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { ChangeSearch, Result, ClickResult } from 'components/app/HeaderSearh';
+import * as s from 'styles/components/HeaderSearchNarrow';
 
 interface Props {
   change$search: ChangeSearch;

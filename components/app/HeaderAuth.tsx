@@ -1,18 +1,15 @@
-import { useSelector } from 'react-redux';
 import { auth } from 'fb';
 import { signOut } from 'firebase/auth';
-import { AuthState, authStatus } from 'reducers/auth';
+import { useAuthStore, authStatus } from 'store/auth';
+import { useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import * as s from 'styles/components/HeaderAuth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { useRef } from 'react';
+import * as s from 'styles/components/HeaderAuth';
 
 export default function HeaderAuth() {
-  const { status: currentAuthStatus, photo } = useSelector(
-    (state: AuthState) => state.auth
-  );
+  const { status: currentAuthStatus, photo } = useAuthStore();
   const userphoto = photo ?? '';
   const router = useRouter();
   const refLoginContent = useRef<HTMLDivElement>(null);

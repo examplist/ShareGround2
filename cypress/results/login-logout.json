@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-19T04:44:45.469Z",
+    "end": "2023-01-19T04:44:50.736Z",
+    "duration": 5267,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3edb500c-40ea-4beb-8f19-ab0009622618",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login-logout.ts",
+      "file": "cypress\\e2e\\login-logout.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "65db225d-bd13-4fe1-aa7f-1ce49e4eac24",
+          "title": "로그인, 로그아웃",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "로그인하기",
+              "fullTitle": "로그인, 로그아웃 로그인하기",
+              "timedOut": null,
+              "duration": 4439,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Object(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"login\"])('asdf@gmail.com', 'asdf1234');",
+              "err": {},
+              "uuid": "baa86120-e318-4968-9890-914961c1c81a",
+              "parentUUID": "65db225d-bd13-4fe1-aa7f-1ce49e4eac24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "로그아웃하기",
+              "fullTitle": "로그인, 로그아웃 로그아웃하기",
+              "timedOut": null,
+              "duration": 759,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Object(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"logout\"])();",
+              "err": {},
+              "uuid": "5127829a-1d1d-4c21-a9d1-547426167cc1",
+              "parentUUID": "65db225d-bd13-4fe1-aa7f-1ce49e4eac24",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "baa86120-e318-4968-9890-914961c1c81a",
+            "5127829a-1d1d-4c21-a9d1-547426167cc1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5198,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name].json",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results",
+        "reportFilename": "[name].json",
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,9 +1,9 @@
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
 import HeaderCategory from 'components/app/HeaderCategory';
 import HeaderSearh from 'components/app/HeaderSearh';
 import HeaderAuth from 'components/app/HeaderAuth';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
 import * as s from 'styles/components/Header';
 
 export default function Header() {

@@ -1,16 +1,15 @@
-import HeaderSearchNarrow from 'components/app/HeaderSearchNarrow';
-import HeaderSearchWide from 'components/app/HeaderSearchWide';
-import { useSelector } from 'react-redux';
-import { SearchState, Item } from 'reducers/search';
+import { useSearchStore, Item } from 'store/search';
 import { ChangeEventHandler, MouseEventHandler, useState } from 'react';
 import searchFunction from 'utils/search';
+import HeaderSearchNarrow from 'components/app/HeaderSearchNarrow';
+import HeaderSearchWide from 'components/app/HeaderSearchWide';
 
 export type ChangeSearch = ChangeEventHandler<HTMLInputElement>;
 export type ClickResult = MouseEventHandler<HTMLDivElement>;
 export type Result = Item[];
 
 export default function HeaderSearh() {
-  const allData = useSelector((state: SearchState) => state.search.list);
+  const { list: allData } = useSearchStore();
   const [searchValue, setSearchValue] = useState<string>('');
   const [result, setResult] = useState<Item[]>([]);
 

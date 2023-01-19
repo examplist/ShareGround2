@@ -1,9 +1,8 @@
 import { DocumentData } from 'firebase/firestore';
-import { useSelector } from 'react-redux';
-import { AuthState } from 'reducers/auth';
+import { useAuthStore } from 'store/auth';
+import { useEffect, useState, useRef } from 'react';
 import Card from 'components/Card';
 import Loader from 'components/profile/Loader';
-import { useEffect, useState, useRef } from 'react';
 import * as s from 'styles/components/ProfileArticle';
 
 interface Datum {
@@ -17,7 +16,7 @@ export default function InterestList() {
   const [data, setData] = useState<Datum[]>([]);
   const [isEnd, setIsEnd] = useState<boolean>(false);
   const refLoader = useRef<HTMLDivElement>(null);
-  const userid = useSelector((state: AuthState) => state.auth.id);
+  const { id: userid } = useAuthStore();
 
   const fetchData = (entries: IntersectionObserverEntry[]) => {
     entries.forEach(async (entry) => {

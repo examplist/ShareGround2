@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-19T04:45:13.484Z",
+    "end": "2023-01-19T04:45:15.991Z",
+    "duration": 2507,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "16b1146e-158c-4c0b-8ec0-1c6af14ae8f6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\card.ts",
+      "file": "cypress\\e2e\\card.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "044d882d-b383-424a-a9ff-2150d0874a18",
+          "title": "카드",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "카테고리가 한글로 되어 있어야 한다.",
+              "fullTitle": "카드 카테고리가 한글로 되어 있어야 한다.",
+              "timedOut": null,
+              "duration": 2226,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#article-card__others').should('contain', '사회');",
+              "err": {},
+              "uuid": "ab731766-b67a-4b94-af3b-45385d924a5c",
+              "parentUUID": "044d882d-b383-424a-a9ff-2150d0874a18",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "날짜가 한글로 되어 있어야 한다.",
+              "fullTitle": "카드 날짜가 한글로 되어 있어야 한다.",
+              "timedOut": null,
+              "duration": 184,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#article-card__others').should('contain', '년');",
+              "err": {},
+              "uuid": "0e439a1f-3032-48f5-95d8-759d2408a19b",
+              "parentUUID": "044d882d-b383-424a-a9ff-2150d0874a18",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ab731766-b67a-4b94-af3b-45385d924a5c",
+            "0e439a1f-3032-48f5-95d8-759d2408a19b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2410,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name].json",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results",
+        "reportFilename": "[name].json",
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,10 +1,9 @@
-import { useSelector } from 'react-redux';
-import { AuthState, authStatus } from 'reducers/auth';
+import { useAuthStore, authStatus } from 'store/auth';
 import SignForm from 'components/sign/SignForm';
 import * as s from 'styles/pages/sign';
 
 export default function sign() {
-  const currentAuthStatus = useSelector((state: AuthState) => state.auth.status);
+  const { status: currentAuthStatus } = useAuthStore();
 
   if (currentAuthStatus === authStatus.loading) {
     return (
