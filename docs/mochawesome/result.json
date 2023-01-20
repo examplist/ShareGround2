@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 13,
-    "tests": 34,
-    "passes": 34,
+    "tests": 37,
+    "passes": 37,
     "pending": 0,
     "failures": 0,
-    "start": "2023-01-19T04:42:16.871Z",
-    "end": "2023-01-19T04:45:15.991Z",
-    "duration": 146927,
-    "testsRegistered": 34,
+    "start": "2023-01-19T23:55:19.074Z",
+    "end": "2023-01-20T00:00:35.844Z",
+    "duration": 214231,
+    "testsRegistered": 37,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3c50a3e5-cdfd-42a0-9503-8835039220dd",
+      "uuid": "12b2eb25-f6a9-44ad-965b-b626a89a90e5",
       "title": "",
       "fullFile": "cypress\\e2e\\article-create-delete.ts",
       "file": "cypress\\e2e\\article-create-delete.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "422dde36-a57b-4ebe-bd66-207131b54f12",
+          "uuid": "bbe4de82-a022-46e0-8618-bc792461c525",
           "title": "글 생성 및 삭제",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "1b8c4a3e-cfc7-4532-a8ef-9e49e8a97003",
+              "uuid": "d893cdf7-4d11-4efa-ad3f-2f3ffa2a874f",
               "title": "로그아웃 상황",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "생성할 수 없다는 메시지가 보여야 한다.",
                   "fullTitle": "글 생성 및 삭제 로그아웃 상황 생성할 수 없다는 메시지가 보여야 한다.",
                   "timedOut": null,
-                  "duration": 1917,
+                  "duration": 3717,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -56,26 +56,26 @@
                   "context": null,
                   "code": "cy.visit('/create');\ncy.get('#cannot-create').should('exist');",
                   "err": {},
-                  "uuid": "a0d515e8-3023-483b-a757-93460d2d669e",
-                  "parentUUID": "1b8c4a3e-cfc7-4532-a8ef-9e49e8a97003",
+                  "uuid": "df3d1528-01b2-43a6-bdad-e2a62267b8e4",
+                  "parentUUID": "d893cdf7-4d11-4efa-ad3f-2f3ffa2a874f",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "a0d515e8-3023-483b-a757-93460d2d669e"
+                "df3d1528-01b2-43a6-bdad-e2a62267b8e4"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1917,
+              "duration": 3717,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "98a56723-99c8-4253-a8fc-d7cb416443b9",
+              "uuid": "7df456c7-9e3b-4539-8d41-63ca00b5617f",
               "title": "로그인 상황",
               "fullFile": "",
               "file": "",
@@ -86,7 +86,7 @@
                   "title": "파일이 없는 경우",
                   "fullTitle": "글 생성 및 삭제 로그인 상황 파일이 없는 경우",
                   "timedOut": null,
-                  "duration": 15071,
+                  "duration": 31511,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -95,8 +95,8 @@
                   "context": null,
                   "code": "// 작성\ncy.get('#create__category').select(category, { force: true });\ncy.get('#create__title').type(title);\ncy.get('#create__explanation').type(explanation);\ncy.get('#create__submit').click();\n// 확인\ncy.url().should('contain', 'article');\ncy.get('#article__category').should('contain', category);\ncy.get('#article__writer').should('contain', 'asdf');\ncy.get('#article__title').should('contain', title);\ncy.get('#article__explanation').should('contain', explanation);\n// 파일 버튼은 없어야 한다.\ncy.get('#article__file').should('not.exist');\n// 작성 목록에서 확인하기\ncy.visit('/profile');\ncy.get('#profile-button__wrote').click();\ncy.get('#article-card').contains(title).click();\n// 삭제\ncy.get('#article__delete').click();\ncy.on('window:confirm', function (str) { return true; });\ncy.get('#article-deletion-page').should('exist');\n// 작성 목록에서도 지워졌는지 확인\ncy.visit('/profile');\ncy.get('#profile-button__wrote').click();\ncy.contains(title).should('not.exist');",
                   "err": {},
-                  "uuid": "234e9c12-5c33-49fa-93b8-0a2334b44feb",
-                  "parentUUID": "98a56723-99c8-4253-a8fc-d7cb416443b9",
+                  "uuid": "25076424-140e-4f44-9aed-e238946f43e4",
+                  "parentUUID": "7df456c7-9e3b-4539-8d41-63ca00b5617f",
                   "isHook": false,
                   "skipped": false
                 },
@@ -104,30 +104,30 @@
                   "title": "파일이 있는 경우",
                   "fullTitle": "글 생성 및 삭제 로그인 상황 파일이 있는 경우",
                   "timedOut": null,
-                  "duration": 6273,
+                  "duration": 11620,
                   "state": "passed",
-                  "speed": "medium",
+                  "speed": "slow",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "// 작성\ncy.get('#create__category').select(category, { force: true });\ncy.get('#create__title').type(title);\ncy.get('#create__explanation').type(explanation);\n// 파일 부분은 display가 none이므로 force를 true로 해야 한다.\ncy.get('#create__file').selectFile(file, { force: true });\ncy.get('#create__submit').click();\n// 확인\ncy.url().should('contain', 'article');\ncy.get('#article__category').should('contain', category);\ncy.get('#article__writer').should('contain', 'asdf');\ncy.get('#article__title').should('contain', title);\ncy.get('#article__explanation').should('contain', explanation);\ncy.get('#article__file').should('exist');\n// 삭제\ncy.get('#article__delete').click();\ncy.on('window:confirm', function (str) { return true; });\ncy.get('#article-deletion-page').should('exist');",
                   "err": {},
-                  "uuid": "4a5f878c-2837-4963-9e2a-09e6983a1d73",
-                  "parentUUID": "98a56723-99c8-4253-a8fc-d7cb416443b9",
+                  "uuid": "63d10a86-71dc-41d8-a2e6-deb97611ffbf",
+                  "parentUUID": "7df456c7-9e3b-4539-8d41-63ca00b5617f",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "234e9c12-5c33-49fa-93b8-0a2334b44feb",
-                "4a5f878c-2837-4963-9e2a-09e6983a1d73"
+                "25076424-140e-4f44-9aed-e238946f43e4",
+                "63d10a86-71dc-41d8-a2e6-deb97611ffbf"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 21344,
+              "duration": 43131,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -153,7 +153,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "7df51178-ff08-427d-a408-49eb9b03a7f9",
+      "uuid": "c6512c37-fe23-460d-b14b-3cc96ae916dc",
       "title": "",
       "fullFile": "cypress\\e2e\\article-edit.ts",
       "file": "cypress\\e2e\\article-edit.ts",
@@ -162,7 +162,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ec466456-91a6-4961-878a-1562f804d2e4",
+          "uuid": "392e40c6-5d34-4d76-89e8-51234669454a",
           "title": "글 수정하기",
           "fullFile": "",
           "file": "",
@@ -171,7 +171,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "8c94ed41-ade4-4c2b-90a2-3c40d8c24369",
+              "uuid": "f14504f9-5327-40af-b2d9-44b8b4189dcf",
               "title": "로그아웃 상황",
               "fullFile": "",
               "file": "",
@@ -182,35 +182,35 @@
                   "title": "수정할 수 없다는 메시지가 보여야 한다.",
                   "fullTitle": "글 수정하기 로그아웃 상황 수정할 수 없다는 메시지가 보여야 한다.",
                   "timedOut": null,
-                  "duration": 4163,
+                  "duration": 10910,
                   "state": "passed",
-                  "speed": "fast",
+                  "speed": "slow",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "cy.visit(\"/edit/\".concat(articleid));\ncy.get('#edit-page__no-author').should('exist');\ncy.visit('/');",
                   "err": {},
-                  "uuid": "f92ddd8f-ae9b-4a72-b366-de82d1037904",
-                  "parentUUID": "8c94ed41-ade4-4c2b-90a2-3c40d8c24369",
+                  "uuid": "240dea06-1173-4ab3-b08e-32c3c832fcfe",
+                  "parentUUID": "f14504f9-5327-40af-b2d9-44b8b4189dcf",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f92ddd8f-ae9b-4a72-b366-de82d1037904"
+                "240dea06-1173-4ab3-b08e-32c3c832fcfe"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 4163,
+              "duration": 10910,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "a9ed8681-bbf4-409f-96c9-249832b85de7",
+              "uuid": "facd3449-294f-4c4c-88e4-be5e37563e2d",
               "title": "로그인 상황",
               "fullFile": "",
               "file": "",
@@ -221,7 +221,7 @@
                   "title": "원래 -> 변형",
                   "fullTitle": "글 수정하기 로그인 상황 원래 -> 변형",
                   "timedOut": null,
-                  "duration": 10958,
+                  "duration": 12015,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -230,8 +230,8 @@
                   "context": null,
                   "code": "// 작성 전에 기존에 글이 남아 있는지 확인\ncy.get('#edit__title').should('have.value', original_title);\n// 작성\ncy.get('#edit__category').select(changed_category, { force: true });\ncy.get('#edit__title').clear().type(changed_title);\ncy.get('#edit__explanation').clear().type(changed_explanation);\n// 파일 부분은 display가 none이므로 force를 true로 해야 한다.\ncy.get('#edit__file').selectFile(changed_file, { force: true });\ncy.get('#edit__submit').click();\n// 확인\ncy.url().should('contain', 'article');\ncy.get('#article__category').should('contain', changed_category);\ncy.get('#article__writer').should('contain', 'asdf');\ncy.get('#article__title').should('contain', changed_title);\ncy.get('#article__explanation').should('contain', changed_explanation);\ncy.get('#article__file').should('exist');\n// 작성 목록에서 확인하기\n// cy.visit('/profile');\nObject(cypress_support_to_profile__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\ncy.get('#profile-button__wrote').click();\ncy.get('#article-card').contains(changed_title).should('exist');",
                   "err": {},
-                  "uuid": "d2f51cf3-973c-40cd-b4ee-4bb6f2dd4586",
-                  "parentUUID": "a9ed8681-bbf4-409f-96c9-249832b85de7",
+                  "uuid": "86de7fbd-cfab-421c-a984-2359aadb5308",
+                  "parentUUID": "facd3449-294f-4c4c-88e4-be5e37563e2d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -239,30 +239,30 @@
                   "title": "변형 -> 원래",
                   "fullTitle": "글 수정하기 로그인 상황 변형 -> 원래",
                   "timedOut": null,
-                  "duration": 9724,
+                  "duration": 10341,
                   "state": "passed",
-                  "speed": "medium",
+                  "speed": "slow",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "// 작성\ncy.get('#edit__category').select(original_category, { force: true });\ncy.get('#edit__title').clear().type(original_title);\ncy.get('#edit__explanation').clear().type(original_explanation);\n// 파일 부분은 display가 none이므로 force를 true로 해야 한다.\ncy.get('#edit__file').selectFile(original_file, { force: true });\ncy.get('#edit__submit').click();\n// 확인\ncy.url().should('contain', 'article');\ncy.get('#article__category').should('contain', original_category);\ncy.get('#article__writer').should('contain', 'asdf');\ncy.get('#article__title').should('contain', original_title);\ncy.get('#article__explanation').should('contain', original_explanation);\ncy.get('#article__file').should('exist');\n// 작성 목록에서 확인하기\n// cy.visit('/profile');\nObject(cypress_support_to_profile__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\ncy.get('#profile-button__wrote').click();\ncy.get('#article-card').contains(original_title).should('exist');",
                   "err": {},
-                  "uuid": "1adf5822-6c97-489f-ba9b-0af6248ed386",
-                  "parentUUID": "a9ed8681-bbf4-409f-96c9-249832b85de7",
+                  "uuid": "7432b313-bb59-457f-80b0-d4fd9bf45e6c",
+                  "parentUUID": "facd3449-294f-4c4c-88e4-be5e37563e2d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d2f51cf3-973c-40cd-b4ee-4bb6f2dd4586",
-                "1adf5822-6c97-489f-ba9b-0af6248ed386"
+                "86de7fbd-cfab-421c-a984-2359aadb5308",
+                "7432b313-bb59-457f-80b0-d4fd9bf45e6c"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 20682,
+              "duration": 22356,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -288,7 +288,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "70002f9b-aa5d-4878-bb28-f4205435b76f",
+      "uuid": "8d28a5f8-fe7e-4f5d-ade9-b755fdede76c",
       "title": "",
       "fullFile": "cypress\\e2e\\article-read.ts",
       "file": "cypress\\e2e\\article-read.ts",
@@ -297,7 +297,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f0cccd79-c3aa-420d-bbcf-c0f2798fba23",
+          "uuid": "88cdfc77-0f2f-4d66-b591-9fbcaf7a93cf",
           "title": "글 읽기",
           "fullFile": "",
           "file": "",
@@ -306,7 +306,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "249a5a7e-b30a-4be0-80c2-00dc4d373543",
+              "uuid": "bf2da5e7-c844-4b94-b47a-fe577c4fa6b4",
               "title": "로그아웃 상황",
               "fullFile": "",
               "file": "",
@@ -317,7 +317,7 @@
                   "title": "구성 요소가 있는지 확인",
                   "fullTitle": "글 읽기 로그아웃 상황 구성 요소가 있는지 확인",
                   "timedOut": null,
-                  "duration": 2674,
+                  "duration": 2430,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -326,26 +326,26 @@
                   "context": null,
                   "code": "cy.get('#article__category').should('exist');\ncy.get('#article__date').should('exist');\ncy.get('#article__writer').should('exist');\ncy.get('#article__title').should('exist');\ncy.get('#article__explanation').should('exist');\ncy.get('#article__file').should('exist');\ncy.get('#article__comment-title').should('exist');\ncy.get('#comment__whole').should('exist');",
                   "err": {},
-                  "uuid": "46a7590e-87d1-44d7-ad6c-2148117b3215",
-                  "parentUUID": "249a5a7e-b30a-4be0-80c2-00dc4d373543",
+                  "uuid": "f0ebe621-399e-4192-b0f7-cd9408060e17",
+                  "parentUUID": "bf2da5e7-c844-4b94-b47a-fe577c4fa6b4",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "46a7590e-87d1-44d7-ad6c-2148117b3215"
+                "f0ebe621-399e-4192-b0f7-cd9408060e17"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2674,
+              "duration": 2430,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "d51531b7-f62d-45b0-b5ef-7df98ea2c473",
+              "uuid": "06e0c35d-0ab3-42d2-bb84-c0eb435f036f",
               "title": "로그인 상황",
               "fullFile": "",
               "file": "",
@@ -356,7 +356,7 @@
                   "title": "로그인을 한 사람이라면 댓글을 작성할 수 있다.",
                   "fullTitle": "글 읽기 로그인 상황 로그인을 한 사람이라면 댓글을 작성할 수 있다.",
                   "timedOut": null,
-                  "duration": 7377,
+                  "duration": 7390,
                   "state": "passed",
                   "speed": "medium",
                   "pass": true,
@@ -365,8 +365,8 @@
                   "context": null,
                   "code": "cy.get('#comment-form').should('exist');",
                   "err": {},
-                  "uuid": "9ccccc4f-739f-4dcc-8f22-2f7a053c1f11",
-                  "parentUUID": "d51531b7-f62d-45b0-b5ef-7df98ea2c473",
+                  "uuid": "f14b4edc-1e7a-42ad-8e6c-67ca51926300",
+                  "parentUUID": "06e0c35d-0ab3-42d2-bb84-c0eb435f036f",
                   "isHook": false,
                   "skipped": false
                 },
@@ -374,7 +374,7 @@
                   "title": "자신이 쓴 글이라면 수정과 삭제 버튼이 있어야 한다.",
                   "fullTitle": "글 읽기 로그인 상황 자신이 쓴 글이라면 수정과 삭제 버튼이 있어야 한다.",
                   "timedOut": null,
-                  "duration": 41,
+                  "duration": 28,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -383,16 +383,16 @@
                   "context": null,
                   "code": "cy.get('#article__to-edit').should('exist');\ncy.get('#article__delete').should('exist');",
                   "err": {},
-                  "uuid": "e6385d8b-2856-492a-92ab-b5f24ae604b5",
-                  "parentUUID": "d51531b7-f62d-45b0-b5ef-7df98ea2c473",
+                  "uuid": "3584929d-73dc-4bbb-b74e-852fdfbbb784",
+                  "parentUUID": "06e0c35d-0ab3-42d2-bb84-c0eb435f036f",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9ccccc4f-739f-4dcc-8f22-2f7a053c1f11",
-                "e6385d8b-2856-492a-92ab-b5f24ae604b5"
+                "f14b4edc-1e7a-42ad-8e6c-67ca51926300",
+                "3584929d-73dc-4bbb-b74e-852fdfbbb784"
               ],
               "failures": [],
               "pending": [],
@@ -423,7 +423,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "16b1146e-158c-4c0b-8ec0-1c6af14ae8f6",
+      "uuid": "de5071a1-037a-416a-86dd-e5d83b170ca9",
       "title": "",
       "fullFile": "cypress\\e2e\\card.ts",
       "file": "cypress\\e2e\\card.ts",
@@ -432,7 +432,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "044d882d-b383-424a-a9ff-2150d0874a18",
+          "uuid": "6418ce50-5d55-473f-8a1f-ccfcd40f3cae",
           "title": "카드",
           "fullFile": "",
           "file": "",
@@ -443,7 +443,7 @@
               "title": "카테고리가 한글로 되어 있어야 한다.",
               "fullTitle": "카드 카테고리가 한글로 되어 있어야 한다.",
               "timedOut": null,
-              "duration": 2226,
+              "duration": 2561,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -452,8 +452,8 @@
               "context": null,
               "code": "cy.get('#article-card__others').should('contain', '사회');",
               "err": {},
-              "uuid": "ab731766-b67a-4b94-af3b-45385d924a5c",
-              "parentUUID": "044d882d-b383-424a-a9ff-2150d0874a18",
+              "uuid": "8a976302-35c6-4c44-8bf1-50c75c39e79d",
+              "parentUUID": "6418ce50-5d55-473f-8a1f-ccfcd40f3cae",
               "isHook": false,
               "skipped": false
             },
@@ -461,7 +461,7 @@
               "title": "날짜가 한글로 되어 있어야 한다.",
               "fullTitle": "카드 날짜가 한글로 되어 있어야 한다.",
               "timedOut": null,
-              "duration": 184,
+              "duration": 152,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -470,21 +470,21 @@
               "context": null,
               "code": "cy.get('#article-card__others').should('contain', '년');",
               "err": {},
-              "uuid": "0e439a1f-3032-48f5-95d8-759d2408a19b",
-              "parentUUID": "044d882d-b383-424a-a9ff-2150d0874a18",
+              "uuid": "aa1356a7-6c92-4696-9d93-18c402fffeb3",
+              "parentUUID": "6418ce50-5d55-473f-8a1f-ccfcd40f3cae",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ab731766-b67a-4b94-af3b-45385d924a5c",
-            "0e439a1f-3032-48f5-95d8-759d2408a19b"
+            "8a976302-35c6-4c44-8bf1-50c75c39e79d",
+            "aa1356a7-6c92-4696-9d93-18c402fffeb3"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2410,
+          "duration": 2713,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -500,7 +500,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "94e57e94-7bbb-4948-9281-2d345cc905c1",
+      "uuid": "fdcfb1fd-df3d-43b1-aca3-dc90ddcfe72f",
       "title": "",
       "fullFile": "cypress\\e2e\\category-page.ts",
       "file": "cypress\\e2e\\category-page.ts",
@@ -509,7 +509,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "366d1ca6-8531-4e3a-9000-f841b8da627e",
+          "uuid": "833bd61f-3682-4677-ae56-a7803b155d7f",
           "title": "카테고리 페이지",
           "fullFile": "",
           "file": "",
@@ -520,7 +520,7 @@
               "title": "구성 요소 확인",
               "fullTitle": "카테고리 페이지 구성 요소 확인",
               "timedOut": null,
-              "duration": 2302,
+              "duration": 2783,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -529,8 +529,8 @@
               "context": null,
               "code": "cy.visit('/category/society/1');\ncy.get('#category-page__title').should('exist');\ncy.get('#article-card').should('exist');\ncy.get('#category-page__paginate').should('exist');",
               "err": {},
-              "uuid": "713100fd-0093-44a5-ae75-8e6604df549f",
-              "parentUUID": "366d1ca6-8531-4e3a-9000-f841b8da627e",
+              "uuid": "1cfe53c8-c9a5-4307-a19c-df313348d809",
+              "parentUUID": "833bd61f-3682-4677-ae56-a7803b155d7f",
               "isHook": false,
               "skipped": false
             },
@@ -538,7 +538,7 @@
               "title": "페이지네이션",
               "fullTitle": "카테고리 페이지 페이지네이션",
               "timedOut": null,
-              "duration": 577,
+              "duration": 766,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -547,8 +547,8 @@
               "context": null,
               "code": "cy.get('#category-page__paginate').contains('2').click();\ncy.url().should('contain', '2');",
               "err": {},
-              "uuid": "449fd332-cbe0-4eb1-b84e-1622966f5130",
-              "parentUUID": "366d1ca6-8531-4e3a-9000-f841b8da627e",
+              "uuid": "ed90e303-f6c3-4412-9914-c7fd152836dd",
+              "parentUUID": "833bd61f-3682-4677-ae56-a7803b155d7f",
               "isHook": false,
               "skipped": false
             },
@@ -556,7 +556,7 @@
               "title": "글로 이동",
               "fullTitle": "카테고리 페이지 글로 이동",
               "timedOut": null,
-              "duration": 443,
+              "duration": 432,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -565,8 +565,8 @@
               "context": null,
               "code": "cy.get('#article-card').click();\ncy.url().should('contain', 'article');",
               "err": {},
-              "uuid": "88fd34ae-46a8-4c40-abbe-163df2f62e69",
-              "parentUUID": "366d1ca6-8531-4e3a-9000-f841b8da627e",
+              "uuid": "1ad48348-3cfa-48da-88d1-2e17aa2f7f65",
+              "parentUUID": "833bd61f-3682-4677-ae56-a7803b155d7f",
               "isHook": false,
               "skipped": false
             },
@@ -574,7 +574,7 @@
               "title": "다른 페이지 클릭하고 다시 카테고리로 돌아오면 페이지네이션 active 버튼이 1페이지를 가리켜야 한다",
               "fullTitle": "카테고리 페이지 다른 페이지 클릭하고 다시 카테고리로 돌아오면 페이지네이션 active 버튼이 1페이지를 가리켜야 한다",
               "timedOut": null,
-              "duration": 3401,
+              "duration": 3897,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -583,23 +583,23 @@
               "context": null,
               "code": "cy.visit('/category/society/1');\ncy.get('#category-page__paginate').contains('2').click();\ncy.get('#category-menu__button').click();\ncy.get('#category-menu__button').click();\ncy.get('#category-menu__result').contains('과학기술').click();\ncy.get('#category-menu__button').click();\ncy.get('#category-menu__button').click();\ncy.get('#category-menu__result').contains('사회').click();\ncy.get('#category-page__paginate')\n    .contains('1')\n    .should('have.css', 'color', 'rgb(230, 126, 34)');",
               "err": {},
-              "uuid": "2ed5ee00-145a-46b0-ace0-399faab6e30e",
-              "parentUUID": "366d1ca6-8531-4e3a-9000-f841b8da627e",
+              "uuid": "d13e2f76-2f02-452f-8c87-cf9185b3bc9d",
+              "parentUUID": "833bd61f-3682-4677-ae56-a7803b155d7f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "713100fd-0093-44a5-ae75-8e6604df549f",
-            "449fd332-cbe0-4eb1-b84e-1622966f5130",
-            "88fd34ae-46a8-4c40-abbe-163df2f62e69",
-            "2ed5ee00-145a-46b0-ace0-399faab6e30e"
+            "1cfe53c8-c9a5-4307-a19c-df313348d809",
+            "ed90e303-f6c3-4412-9914-c7fd152836dd",
+            "1ad48348-3cfa-48da-88d1-2e17aa2f7f65",
+            "d13e2f76-2f02-452f-8c87-cf9185b3bc9d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6723,
+          "duration": 7878,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -615,7 +615,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "ac352307-4970-4fc6-9e01-b352d05f4f13",
+      "uuid": "8ddce101-798b-4622-8cff-8a2bb9643e0c",
       "title": "",
       "fullFile": "cypress\\e2e\\comment.ts",
       "file": "cypress\\e2e\\comment.ts",
@@ -624,7 +624,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b9fda372-f124-42c0-b45b-34d8fe8db69d",
+          "uuid": "e3c040e6-99bd-45d1-88ef-f0be7dd768b9",
           "title": "댓글",
           "fullFile": "",
           "file": "",
@@ -635,7 +635,7 @@
               "title": "작성 -> 확인 -> 삭제",
               "fullTitle": "댓글 작성 -> 확인 -> 삭제",
               "timedOut": null,
-              "duration": 15349,
+              "duration": 14123,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -644,20 +644,20 @@
               "context": null,
               "code": "// 로그인하기\nObject(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"login\"])('asdf@gmail.com', 'asdf1234');\n// 이동하기\ncy.visit('/article/9mDSqenHRWNZTvCvsSew');\n// 작성\ncy.get('#comment-form__content').type(content);\ncy.get('#comment-form__submit').click();\n// 작성 확인\ncy.contains(content).should('exist');\n// 삭제\ncy.get('#comment__delete').click();\ncy.on('window:confirm', function (str) { return true; });\n// 삭제 확인\ncy.contains(content).should('not.exist');\n// 로그아웃하기\nObject(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"logout\"])();",
               "err": {},
-              "uuid": "d5d12dd6-bbb4-4a5d-b39f-632cc7f8f1e4",
-              "parentUUID": "b9fda372-f124-42c0-b45b-34d8fe8db69d",
+              "uuid": "341a94ce-eb14-4f17-affc-9171dc2e319e",
+              "parentUUID": "e3c040e6-99bd-45d1-88ef-f0be7dd768b9",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d5d12dd6-bbb4-4a5d-b39f-632cc7f8f1e4"
+            "341a94ce-eb14-4f17-affc-9171dc2e319e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 15349,
+          "duration": 14123,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -673,7 +673,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "5faa4cae-55ce-4907-b77d-37fdf5519bcb",
+      "uuid": "c2bab656-0587-4d1f-aead-490524f0bd59",
       "title": "",
       "fullFile": "cypress\\e2e\\home.ts",
       "file": "cypress\\e2e\\home.ts",
@@ -682,7 +682,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1af72160-e064-4681-bb55-ca34309a9f79",
+          "uuid": "b211264c-ca44-4575-8b8c-95181843077e",
           "title": "홈페이지",
           "fullFile": "",
           "file": "",
@@ -693,7 +693,7 @@
               "title": "각종 부분이 있는지 체크하기",
               "fullTitle": "홈페이지 각종 부분이 있는지 체크하기",
               "timedOut": null,
-              "duration": 2402,
+              "duration": 4032,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -702,8 +702,8 @@
               "context": null,
               "code": "cy.visit('/');\ncy.get('header');\ncy.get('#welcome');\ncy.get('#intro');\ncy.get('footer');",
               "err": {},
-              "uuid": "951bf161-2ab7-4200-ab8a-200d6552f7cb",
-              "parentUUID": "1af72160-e064-4681-bb55-ca34309a9f79",
+              "uuid": "23a3c3dd-e62b-4697-9763-84648e6fde09",
+              "parentUUID": "b211264c-ca44-4575-8b8c-95181843077e",
               "isHook": false,
               "skipped": false
             },
@@ -711,7 +711,7 @@
               "title": "카테고리 클릭해서 이동하기",
               "fullTitle": "홈페이지 카테고리 클릭해서 이동하기",
               "timedOut": null,
-              "duration": 5167,
+              "duration": 8001,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -720,8 +720,8 @@
               "context": null,
               "code": "cy.get('#category-menu__button').click();\ncy.get('#category-menu__button').click();\ncy.get('#category-menu__result').contains('사회').click();\ncy.url().should('contain', 'category');\ncy.url().should('contain', 'society');\ncy.visit('/');",
               "err": {},
-              "uuid": "18871ae7-3288-4c77-ac18-962cf62aa46f",
-              "parentUUID": "1af72160-e064-4681-bb55-ca34309a9f79",
+              "uuid": "6a9e110b-94c3-4e91-a762-6631784820f7",
+              "parentUUID": "b211264c-ca44-4575-8b8c-95181843077e",
               "isHook": false,
               "skipped": false
             },
@@ -729,7 +729,7 @@
               "title": "카테고리 hover해서 이동하기",
               "fullTitle": "홈페이지 카테고리 hover해서 이동하기",
               "timedOut": null,
-              "duration": 2237,
+              "duration": 3799,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -738,8 +738,8 @@
               "context": null,
               "code": "// 코드는 mouseeneter로 했지만 여기서는 mouseover로 하였다.\ncy.get('#category-menu__button').trigger('mouseover');\ncy.get('#category-menu__result').contains('사회').click();\ncy.url().should('contain', 'category');\ncy.url().should('contain', 'society');\ncy.visit('/');",
               "err": {},
-              "uuid": "831b5bc1-0fca-493e-8133-ce0648093337",
-              "parentUUID": "1af72160-e064-4681-bb55-ca34309a9f79",
+              "uuid": "3ca2a8e4-665d-4e0c-ae3c-085013b0c0f9",
+              "parentUUID": "b211264c-ca44-4575-8b8c-95181843077e",
               "isHook": false,
               "skipped": false
             },
@@ -747,7 +747,7 @@
               "title": "카테고리 키보드로 이동하기",
               "fullTitle": "홈페이지 카테고리 키보드로 이동하기",
               "timedOut": null,
-              "duration": 233,
+              "duration": 358,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -756,8 +756,8 @@
               "context": null,
               "code": "cy.get('#category-menu__result').should('have.css', 'display', 'none');\ncy.get('#category-menu__button').focus().type('{enter}');\ncy.get('#category-menu__result').should('not.have.css', 'display', 'none');",
               "err": {},
-              "uuid": "e9f79220-5978-4ae3-92c7-d467a069fd4e",
-              "parentUUID": "1af72160-e064-4681-bb55-ca34309a9f79",
+              "uuid": "9011f5d5-7fe4-498d-9dca-463d0e5f1660",
+              "parentUUID": "b211264c-ca44-4575-8b8c-95181843077e",
               "isHook": false,
               "skipped": false
             },
@@ -765,17 +765,17 @@
               "title": "작성 페이지로 이동",
               "fullTitle": "홈페이지 작성 페이지로 이동",
               "timedOut": null,
-              "duration": 1986,
+              "duration": 5515,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get('#to-create').click();\ncy.url().should('contain', 'create');\ncy.visit('/');",
               "err": {},
-              "uuid": "b689a08e-0ec1-43f6-8030-39885e223819",
-              "parentUUID": "1af72160-e064-4681-bb55-ca34309a9f79",
+              "uuid": "4dfe9a80-88b2-45e2-a3fd-bd6ff6fbea58",
+              "parentUUID": "b211264c-ca44-4575-8b8c-95181843077e",
               "isHook": false,
               "skipped": false
             },
@@ -783,17 +783,17 @@
               "title": "로그인 페이지로 이동",
               "fullTitle": "홈페이지 로그인 페이지로 이동",
               "timedOut": null,
-              "duration": 2939,
+              "duration": 5683,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get('header #to-login').click();\ncy.url().should('contain', 'sign');\ncy.visit('/');",
               "err": {},
-              "uuid": "eb278455-7472-4f74-a86f-07306cb2e6ba",
-              "parentUUID": "1af72160-e064-4681-bb55-ca34309a9f79",
+              "uuid": "806762f7-7718-43e6-8bec-fb093bc7b0e1",
+              "parentUUID": "b211264c-ca44-4575-8b8c-95181843077e",
               "isHook": false,
               "skipped": false
             },
@@ -801,7 +801,7 @@
               "title": "screen-medium 이하이면 검색창 사라지고 검색 버튼 생김",
               "fullTitle": "홈페이지 screen-medium 이하이면 검색창 사라지고 검색 버튼 생김",
               "timedOut": null,
-              "duration": 154,
+              "duration": 302,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -810,8 +810,8 @@
               "context": null,
               "code": "cy.get('#search-narrow__container').should('have.css', 'display', 'none');\ncy.viewport(Cypress.env('screenMedium') - 1, 1000);\ncy.get('#search-narrow__container').should('not.have.css', 'display', 'none');",
               "err": {},
-              "uuid": "236b22fe-da5b-4ca6-9ea0-24dd3b1de6e6",
-              "parentUUID": "1af72160-e064-4681-bb55-ca34309a9f79",
+              "uuid": "915f3e44-6d4a-465b-a317-0c8a92704551",
+              "parentUUID": "b211264c-ca44-4575-8b8c-95181843077e",
               "isHook": false,
               "skipped": false
             },
@@ -819,7 +819,7 @@
               "title": "screen-tiny 이하이면 카테고리 줄어듬",
               "fullTitle": "홈페이지 screen-tiny 이하이면 카테고리 줄어듬",
               "timedOut": null,
-              "duration": 105,
+              "duration": 196,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -828,27 +828,27 @@
               "context": null,
               "code": "cy.get('#category-narrow__button').should('have.css', 'display', 'none');\ncy.viewport(Cypress.env('screenTiny') - 1, 500);\ncy.get('#category-narrow__button').should('not.have.css', 'display', 'none');",
               "err": {},
-              "uuid": "f5d1cd14-41e1-461e-8c74-34177d752e28",
-              "parentUUID": "1af72160-e064-4681-bb55-ca34309a9f79",
+              "uuid": "792ab396-2c71-44cb-b5ce-db4b071ca1ed",
+              "parentUUID": "b211264c-ca44-4575-8b8c-95181843077e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "951bf161-2ab7-4200-ab8a-200d6552f7cb",
-            "18871ae7-3288-4c77-ac18-962cf62aa46f",
-            "831b5bc1-0fca-493e-8133-ce0648093337",
-            "e9f79220-5978-4ae3-92c7-d467a069fd4e",
-            "b689a08e-0ec1-43f6-8030-39885e223819",
-            "eb278455-7472-4f74-a86f-07306cb2e6ba",
-            "236b22fe-da5b-4ca6-9ea0-24dd3b1de6e6",
-            "f5d1cd14-41e1-461e-8c74-34177d752e28"
+            "23a3c3dd-e62b-4697-9763-84648e6fde09",
+            "6a9e110b-94c3-4e91-a762-6631784820f7",
+            "3ca2a8e4-665d-4e0c-ae3c-085013b0c0f9",
+            "9011f5d5-7fe4-498d-9dca-463d0e5f1660",
+            "4dfe9a80-88b2-45e2-a3fd-bd6ff6fbea58",
+            "806762f7-7718-43e6-8bec-fb093bc7b0e1",
+            "915f3e44-6d4a-465b-a317-0c8a92704551",
+            "792ab396-2c71-44cb-b5ce-db4b071ca1ed"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 15223,
+          "duration": 27886,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -864,7 +864,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "34209bb6-64f7-4d3d-bbf3-24e768015fee",
+      "uuid": "6e04e993-7707-446c-89e7-c196cbcda1f7",
       "title": "",
       "fullFile": "cypress\\e2e\\initialize.ts",
       "file": "cypress\\e2e\\initialize.ts",
@@ -875,7 +875,7 @@
           "title": "initialize",
           "fullTitle": "initialize",
           "timedOut": null,
-          "duration": 1918,
+          "duration": 3375,
           "state": "passed",
           "speed": "fast",
           "pass": true,
@@ -884,26 +884,26 @@
           "context": null,
           "code": "cy.visit('/');",
           "err": {},
-          "uuid": "1ffe3d07-ae24-4533-b628-072a880417fa",
-          "parentUUID": "34209bb6-64f7-4d3d-bbf3-24e768015fee",
+          "uuid": "ece02eec-999a-40e1-a1b9-2da4ddac84e8",
+          "parentUUID": "6e04e993-7707-446c-89e7-c196cbcda1f7",
           "isHook": false,
           "skipped": false
         }
       ],
       "suites": [],
       "passes": [
-        "1ffe3d07-ae24-4533-b628-072a880417fa"
+        "ece02eec-999a-40e1-a1b9-2da4ddac84e8"
       ],
       "failures": [],
       "pending": [],
       "skipped": [],
-      "duration": 1918,
+      "duration": 3375,
       "root": true,
       "rootEmpty": false,
       "_timeout": 2000
     },
     {
-      "uuid": "dc7173f9-79d4-47dd-9764-0ecbf92187eb",
+      "uuid": "59f13771-aedf-4500-8f1b-01001226dbc6",
       "title": "",
       "fullFile": "cypress\\e2e\\interest.ts",
       "file": "cypress\\e2e\\interest.ts",
@@ -912,7 +912,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "703fbb67-741b-4e25-b561-b76facc0795d",
+          "uuid": "abad15eb-1178-4205-b856-017704a23bef",
           "title": "관심 목록",
           "fullFile": "",
           "file": "",
@@ -923,7 +923,7 @@
               "title": "추가하고 삭제하기",
               "fullTitle": "관심 목록 추가하고 삭제하기",
               "timedOut": null,
-              "duration": 15672,
+              "duration": 14619,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -932,20 +932,20 @@
               "context": null,
               "code": "// 로그인하기\nObject(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"login\"])('qwer@gmail.com', 'asdf1234');\ncy.visit('/article/9mDSqenHRWNZTvCvsSew');\n// 추가하기\ncy.get('#article__interest-button').click();\ncy.get('#article__interest-button svg').should('have.attr', 'data-prefix', 'fas');\n// 프로필에서 확인하기\ncy.visit('/profile');\ncy.get('#profile-button__interest').click();\ncy.contains(titleText).click();\n// 해제하기\ncy.get('#article__interest-button svg').should('have.attr', 'data-prefix', 'fas');\ncy.get('#article__interest-button').click();\ncy.get('#article__interest-button svg').should('have.attr', 'data-prefix', 'far');\n// 프로필에서 확인하기\ncy.visit('/profile');\ncy.get('#profile-button__interest').click();\ncy.contains(titleText).should('not.exist');\n// 로그아웃하기\nObject(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"logout\"])();",
               "err": {},
-              "uuid": "e7b70c41-a355-4b7c-a927-e7a4516fc2a6",
-              "parentUUID": "703fbb67-741b-4e25-b561-b76facc0795d",
+              "uuid": "5fc08887-c50f-423d-a206-feeea61b187c",
+              "parentUUID": "abad15eb-1178-4205-b856-017704a23bef",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e7b70c41-a355-4b7c-a927-e7a4516fc2a6"
+            "5fc08887-c50f-423d-a206-feeea61b187c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 15672,
+          "duration": 14619,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -961,7 +961,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "3edb500c-40ea-4beb-8f19-ab0009622618",
+      "uuid": "4e3ad91e-b798-47cc-a7bc-97b7dd1998f1",
       "title": "",
       "fullFile": "cypress\\e2e\\login-logout.ts",
       "file": "cypress\\e2e\\login-logout.ts",
@@ -970,7 +970,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "65db225d-bd13-4fe1-aa7f-1ce49e4eac24",
+          "uuid": "99f6dd55-b191-45e8-b199-75d794953f36",
           "title": "로그인, 로그아웃",
           "fullFile": "",
           "file": "",
@@ -978,20 +978,56 @@
           "afterHooks": [],
           "tests": [
             {
-              "title": "로그인하기",
-              "fullTitle": "로그인, 로그아웃 로그인하기",
+              "title": "잘못된 아이디인 경우",
+              "fullTitle": "로그인, 로그아웃 잘못된 아이디인 경우",
               "timedOut": null,
-              "duration": 4439,
+              "duration": 3155,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
+              "code": "cy.visit('/sign');\ncy.get('#email').type('aaaa@gmail.com');\ncy.get('#password').type('asdf1234');\ncy.get('#log-in').click();\ncy.on('window:alert', function (str) {\n    expect(str).to.equal('해당 계정이 존재하지 않습니다!');\n});",
+              "err": {},
+              "uuid": "05b94d3d-48c9-4a72-98a7-b3afa8a195ef",
+              "parentUUID": "99f6dd55-b191-45e8-b199-75d794953f36",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "잘못된 비밀번호인 경우",
+              "fullTitle": "로그인, 로그아웃 잘못된 비밀번호인 경우",
+              "timedOut": null,
+              "duration": 3145,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/sign');\ncy.get('#email').type('asdf@gmail.com');\ncy.get('#password').type('asdf12345');\ncy.get('#log-in').click();\ncy.on('window:alert', function (str) {\n    expect(str).to.equal('잘못된 비밀번호를 입력하셨습니다!');\n});",
+              "err": {},
+              "uuid": "18a32ef3-3251-4e8b-b49b-cc8ec8d97b19",
+              "parentUUID": "99f6dd55-b191-45e8-b199-75d794953f36",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "로그인하기",
+              "fullTitle": "로그인, 로그아웃 로그인하기",
+              "timedOut": null,
+              "duration": 5157,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
               "code": "Object(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"login\"])('asdf@gmail.com', 'asdf1234');",
               "err": {},
-              "uuid": "baa86120-e318-4968-9890-914961c1c81a",
-              "parentUUID": "65db225d-bd13-4fe1-aa7f-1ce49e4eac24",
+              "uuid": "12d7be90-f454-431d-bd3b-cce7e013c151",
+              "parentUUID": "99f6dd55-b191-45e8-b199-75d794953f36",
               "isHook": false,
               "skipped": false
             },
@@ -999,7 +1035,7 @@
               "title": "로그아웃하기",
               "fullTitle": "로그인, 로그아웃 로그아웃하기",
               "timedOut": null,
-              "duration": 759,
+              "duration": 776,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1008,21 +1044,23 @@
               "context": null,
               "code": "Object(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"logout\"])();",
               "err": {},
-              "uuid": "5127829a-1d1d-4c21-a9d1-547426167cc1",
-              "parentUUID": "65db225d-bd13-4fe1-aa7f-1ce49e4eac24",
+              "uuid": "6c41432a-d594-41e0-83b0-7542e1831b06",
+              "parentUUID": "99f6dd55-b191-45e8-b199-75d794953f36",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "baa86120-e318-4968-9890-914961c1c81a",
-            "5127829a-1d1d-4c21-a9d1-547426167cc1"
+            "05b94d3d-48c9-4a72-98a7-b3afa8a195ef",
+            "18a32ef3-3251-4e8b-b49b-cc8ec8d97b19",
+            "12d7be90-f454-431d-bd3b-cce7e013c151",
+            "6c41432a-d594-41e0-83b0-7542e1831b06"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5198,
+          "duration": 12233,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1038,7 +1076,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "5ed53969-5421-4d59-81e7-2646c18c9c32",
+      "uuid": "a981f286-e195-4de4-b7a5-dc777a0ae4fb",
       "title": "",
       "fullFile": "cypress\\e2e\\profile-name.ts",
       "file": "cypress\\e2e\\profile-name.ts",
@@ -1047,7 +1085,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c0a40149-1cd8-4335-aeca-24b44efe435b",
+          "uuid": "8285ed5a-5782-4971-b43a-4b78030ad21e",
           "title": "프로필 이름",
           "fullFile": "",
           "file": "",
@@ -1058,29 +1096,29 @@
               "title": "바꿨다가 원래대로 돌리기",
               "fullTitle": "프로필 이름 바꿨다가 원래대로 돌리기",
               "timedOut": null,
-              "duration": 8842,
+              "duration": 10766,
               "state": "passed",
-              "speed": "medium",
+              "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "// 로그인하기\nObject(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"login\"])('asdf@gmail.com', 'asdf1234');\n// 프로필에서 확인하기\ncy.visit('/profile');\n// 현재 이름 가져오기\ncy.get('#profile-name').invoke('text').as('originalName');\n// 이름 바꾸기\ncy.get('#profile-name__to-edit').click();\ncy.get('#profile-name__edit-input').clear().type(changedName);\ncy.get('#profile-name__edit-confirm').click();\ncy.get('#profile-name').should('have.text', changedName);\n// 원래로 돌리기\ncy.get('#profile-name__to-edit').click();\ncy.get('@originalName').then(function (originalName) {\n    cy.get('#profile-name__edit-input').clear().type(originalName);\n    cy.get('#profile-name__edit-confirm').click();\n    cy.get('#profile-name').should('have.text', originalName);\n});\n// 로그아웃하기\nObject(cypress_support_sign__WEBPACK_IMPORTED_MODULE_0__[\"logout\"])();",
               "err": {},
-              "uuid": "be8a5b5b-1730-43f4-a351-99d966c01afd",
-              "parentUUID": "c0a40149-1cd8-4335-aeca-24b44efe435b",
+              "uuid": "c1bde487-6a58-4b88-9f9d-0a3c8a41d2fc",
+              "parentUUID": "8285ed5a-5782-4971-b43a-4b78030ad21e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "be8a5b5b-1730-43f4-a351-99d966c01afd"
+            "c1bde487-6a58-4b88-9f9d-0a3c8a41d2fc"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8842,
+          "duration": 10766,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1096,7 +1134,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "0da8ec67-8d87-47f6-a281-a21f91b4d1c4",
+      "uuid": "6d0b9474-7488-4e04-8504-29ea02a1e4d8",
       "title": "",
       "fullFile": "cypress\\e2e\\search.ts",
       "file": "cypress\\e2e\\search.ts",
@@ -1105,7 +1143,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8254aa21-dc91-4649-bae0-22ae4bac7a6b",
+          "uuid": "6df2f811-8e57-4075-9284-6746000c2945",
           "title": "검색",
           "fullFile": "",
           "file": "",
@@ -1116,7 +1154,7 @@
               "title": "wide한 상황에서 최신 글 찾고, 검색하기",
               "fullTitle": "검색 wide한 상황에서 최신 글 찾고, 검색하기",
               "timedOut": null,
-              "duration": 6929,
+              "duration": 9981,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -1125,8 +1163,8 @@
               "context": null,
               "code": "cy.visit('/category/society/1');\ncy.get('#article-card__title')\n    .first()\n    .then(function ($firstArticleCard) {\n    var titleText = $firstArticleCard.text();\n    cy.get('#search-wide-input').type(titleText);\n    cy.get('#search-wide-result').contains(titleText).click();\n    cy.url().should('contain', 'article');\n    cy.get('#article__title').should('have.text', titleText);\n});\ncy.visit('/category/society/1');",
               "err": {},
-              "uuid": "7cf8fcd0-9e6e-4ada-b087-36277076d5b0",
-              "parentUUID": "8254aa21-dc91-4649-bae0-22ae4bac7a6b",
+              "uuid": "1a312924-b6a3-47fe-9b00-a9d29857f237",
+              "parentUUID": "6df2f811-8e57-4075-9284-6746000c2945",
               "isHook": false,
               "skipped": false
             },
@@ -1134,7 +1172,7 @@
               "title": "narrow한 상황에서 최신 글 찾고, 검색하기",
               "fullTitle": "검색 narrow한 상황에서 최신 글 찾고, 검색하기",
               "timedOut": null,
-              "duration": 981,
+              "duration": 1627,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1143,21 +1181,21 @@
               "context": null,
               "code": "cy.viewport(Cypress.env('screenMedium') - 1, 1000);\ncy.get('#search-narrow__button').click();\ncy.get('#article-card__title')\n    .first()\n    .then(function ($firstArticleCard) {\n    var titleText = $firstArticleCard.text();\n    cy.get('#search-narrow__input').type(titleText);\n    cy.get('#search-narrow__result').contains(titleText).click();\n    cy.url().should('contain', 'article');\n    cy.get('#article__title').should('have.text', titleText);\n});",
               "err": {},
-              "uuid": "a3f75a7b-bdbb-462f-8f99-29a37df36bd0",
-              "parentUUID": "8254aa21-dc91-4649-bae0-22ae4bac7a6b",
+              "uuid": "f1f204c3-e123-4174-b144-1728779413b7",
+              "parentUUID": "6df2f811-8e57-4075-9284-6746000c2945",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7cf8fcd0-9e6e-4ada-b087-36277076d5b0",
-            "a3f75a7b-bdbb-462f-8f99-29a37df36bd0"
+            "1a312924-b6a3-47fe-9b00-a9d29857f237",
+            "f1f204c3-e123-4174-b144-1728779413b7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7910,
+          "duration": 11608,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1173,7 +1211,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "79747aee-95ba-4781-a424-873ecb493bba",
+      "uuid": "1413020c-9baf-4f38-9f37-da667124cc88",
       "title": "",
       "fullFile": "cypress\\e2e\\signup-delete.ts",
       "file": "cypress\\e2e\\signup-delete.ts",
@@ -1182,7 +1220,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e9694e0e-3fa6-467e-945f-c62badea4956",
+          "uuid": "eb610f37-fc22-45e4-bc08-a4032567bf9c",
           "title": "회원가입, 탈퇴",
           "fullFile": "",
           "file": "",
@@ -1190,10 +1228,28 @@
           "afterHooks": [],
           "tests": [
             {
+              "title": "비밀번호는 6자리 이상이어야 한다.",
+              "fullTitle": "회원가입, 탈퇴 비밀번호는 6자리 이상이어야 한다.",
+              "timedOut": null,
+              "duration": 5530,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/sign');\ncy.get('#email').type(email);\ncy.get('#password').type('1234');\ncy.get('#sign-up-button').click();\ncy.on('window:alert', function (str) {\n    expect(str).to.equal('비밀번호는 6자리 이상이어야 합니다!');\n});",
+              "err": {},
+              "uuid": "e0762c0a-65e5-4b2a-825d-a2e2b62c6efa",
+              "parentUUID": "eb610f37-fc22-45e4-bc08-a4032567bf9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
               "title": "회원가입",
               "fullTitle": "회원가입, 탈퇴 회원가입",
               "timedOut": null,
-              "duration": 5558,
+              "duration": 7399,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -1202,8 +1258,8 @@
               "context": null,
               "code": "cy.visit('/sign');\ncy.get('#email').type(email);\ncy.get('#password').type(password);\ncy.get('#sign-up-button').click();\ncy.get('#to-profile').should('exist');",
               "err": {},
-              "uuid": "439c092b-d22e-40c2-bed8-30460225725f",
-              "parentUUID": "e9694e0e-3fa6-467e-945f-c62badea4956",
+              "uuid": "ee896026-fdcc-4037-8972-1c05e8b343a6",
+              "parentUUID": "eb610f37-fc22-45e4-bc08-a4032567bf9c",
               "isHook": false,
               "skipped": false
             },
@@ -1211,17 +1267,17 @@
               "title": "프로필에서 이름 확인",
               "fullTitle": "회원가입, 탈퇴 프로필에서 이름 확인",
               "timedOut": null,
-              "duration": 3115,
+              "duration": 5232,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visit('/profile');\ncy.get('#profile-name').should('have.text', email.split('@')[0]);",
               "err": {},
-              "uuid": "95b65290-953a-433d-9d41-185a9275599b",
-              "parentUUID": "e9694e0e-3fa6-467e-945f-c62badea4956",
+              "uuid": "ed0f61df-9284-4ac7-bf7d-af4c521855ba",
+              "parentUUID": "eb610f37-fc22-45e4-bc08-a4032567bf9c",
               "isHook": false,
               "skipped": false
             },
@@ -1229,7 +1285,7 @@
               "title": "탈퇴하기",
               "fullTitle": "회원가입, 탈퇴 탈퇴하기",
               "timedOut": null,
-              "duration": 811,
+              "duration": 907,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1238,22 +1294,23 @@
               "context": null,
               "code": "cy.get('#delete-account-button').click();\ncy.get('#to-login').should('exist');",
               "err": {},
-              "uuid": "d040e485-a506-41c7-9eec-9e5cd45f6444",
-              "parentUUID": "e9694e0e-3fa6-467e-945f-c62badea4956",
+              "uuid": "a21f30ae-9cf5-4e70-82ae-c0549ccd2fdb",
+              "parentUUID": "eb610f37-fc22-45e4-bc08-a4032567bf9c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "439c092b-d22e-40c2-bed8-30460225725f",
-            "95b65290-953a-433d-9d41-185a9275599b",
-            "d040e485-a506-41c7-9eec-9e5cd45f6444"
+            "e0762c0a-65e5-4b2a-825d-a2e2b62c6efa",
+            "ee896026-fdcc-4037-8972-1c05e8b343a6",
+            "ed0f61df-9284-4ac7-bf7d-af4c521855ba",
+            "a21f30ae-9cf5-4e70-82ae-c0549ccd2fdb"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9484,
+          "duration": 19068,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
