@@ -1,5 +1,6 @@
 import { useAuthStore, authStatus } from 'store/auth';
-import Create from 'components/create/Create';
+// import Create from 'components/create/Create';
+import Create from 'components/create/CreateRQ';
 import * as s from 'styles/pages/write';
 
 export default function profile() {

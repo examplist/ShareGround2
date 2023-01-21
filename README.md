@@ -16,10 +16,6 @@
 
 이에 대해서는 해당 저장소 최상단에 있는 [에러.md](에러.md)에 적었습니다.
 
-## 고민했던 부분들
-
-이에 대해서는 해당 저장소 최상단에 있는 [고민.md](고민.md)에 적었습니다.
-
 ## 테스트 결과
 
 [링크](https://bada3670.github.io/ShareGround2/mochawesome/report.html)

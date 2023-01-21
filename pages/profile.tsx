@@ -2,6 +2,8 @@ import { useAuthStore, authStatus } from 'store/auth';
 import { useState } from 'react';
 import Account from 'components/profile/Account';
 import Wrote from 'components/profile/Wrote';
+// import Wrote from 'components/profile/WroteRQ1';
+// import Wrote from 'components/profile/WroteRQ2';
 import InterestList from 'components/profile/InterestList';
 import * as s from 'styles/pages/profile';
 

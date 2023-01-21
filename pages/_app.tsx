@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import Auth from 'components/app/Auth';
 import Search from 'components/app/Search';
 import Header from 'components/app/Header';
@@ -11,6 +13,8 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 
+const queryClient = new QueryClient();
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -20,9 +24,12 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <div>
         <Auth />
-        <Search />
-        <Header />
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Search />
+          <Header />
+          <Component {...pageProps} />
+          <ReactQueryDevtools />
+        </QueryClientProvider>
         <Footer />
         <Following />
       </div>

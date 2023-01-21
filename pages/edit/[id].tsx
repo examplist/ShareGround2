@@ -1,30 +1,18 @@
-import { DocumentData } from 'firebase/firestore';
 import { useAuthStore } from 'store/auth';
-import { useEffect, useState } from 'react';
-import Edit from 'components/edit/Edit';
+import { useArticleEditGetData } from 'hooks/article';
+// import Edit from 'components/edit/Edit';
+import Edit from 'components/edit/EditRQ';
 import * as s from 'styles/pages/write';
 
 export default function ({ id: articleid }: { id: string }) {
   const { id: userid } = useAuthStore();
-  const [article, setArticle] = useState<DocumentData | null | undefined>(undefined);
+  const { isLoading, isError, data: article } = useArticleEditGetData(articleid);
 
-  useEffect(() => {
-    (async () => {
-      const resArticle = await fetch(`/api/articles?ar=${articleid}`);
-      if (resArticle.status !== 200) {
-        setArticle(null);
-      } else {
-        const data = await resArticle.json();
-        setArticle(data);
-      }
-    })();
-  }, []);
-
-  if (article === undefined) {
+  if (isLoading) {
     return <s.notConfirmed>글을 가져오고 있습니다.</s.notConfirmed>;
   }
 
-  if (article === null) {
+  if (isError) {
     return <s.notConfirmed>해당 글이 존재하지 않습니다.</s.notConfirmed>;
   }
 
