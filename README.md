@@ -27,7 +27,3 @@ zxcv@gmail.com: 많은 글을 관심 목록에 담았습니다.
 ## 겪은 에러와 대처
 
 이에 대해서는 해당 저장소 최상단에 있는 [에러.md](에러.md)에 적었습니다.
-
-## 테스트 결과
-
-[링크](https://bada3670.github.io/ShareGround2/mochawesome/report.html)

@@ -1,0 +1,16 @@
+name: build and test
+
+on:
+  push:
+    branches: ['dev']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.0.7 # use the explicit version number
+        with:
+          build: npm run build
+          start: npm start
