@@ -2,6 +2,7 @@
 
 describe('검색', () => {
   it('wide한 상황에서 최신 글 찾고, 검색하기', () => {
+    cy.wait(2000);
     cy.visit('/category/society/1');
     cy.get('#article-card__title')
       .first()
