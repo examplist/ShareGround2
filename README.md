@@ -1,8 +1,6 @@
 ## 배포
 
-[Vercel](https://shareground2.vercel.app/)
-
-[AWS Amplify](https://main.d3h0dqbjwgrrx3.amplifyapp.com/)
+[링크](https://shareground2.vercel.app/)
 
 |이미 존재하는 계정|
 
